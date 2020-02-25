@@ -2,9 +2,7 @@ import yaml
 
 from charmhelpers.core import host, hookenv
 from charmhelpers.core.templating import render
-from charms.reactive import (
-    when, when_not, set_state, remove_state, endpoint_from_name
-)
+from charms.reactive import endpoint_from_name, remove_state, set_state, when, when_not
 from charms.reactive.helpers import any_file_changed, data_changed
 from charms.layer import snap
 
