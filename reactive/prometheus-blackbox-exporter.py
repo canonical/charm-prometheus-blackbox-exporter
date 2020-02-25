@@ -3,7 +3,11 @@ import yaml
 from charmhelpers.core import host, hookenv
 from charmhelpers.core.templating import render
 from charms.reactive import (
-    when, when_not, set_state, remove_state
+    endpoint_from_name,
+    remove_state,
+    set_state,
+    when,
+    when_not,
 )
 from charms.reactive.helpers import any_file_changed, data_changed
 from charms.layer import snap
@@ -90,5 +94,6 @@ def restart_blackbox_exporter():
 # Relations
 @when('blackbox-exporter.started')
 @when('blackbox-exporter.available') # Relation name is "blackbox-exporter"
-def configure_blackbox_exporter_relation(target):
+def configure_blackbox_exporter_relation():
+    target = endpoint_from_name('blackbox-exporter')
     target.configure(PORT_DEF)
