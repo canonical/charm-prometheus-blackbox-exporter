@@ -158,7 +158,7 @@ def update_nrpe_config(svc):
                          check_cmd='check_http -I 127.0.0.1 -p {} -u /metrics'.format(PORT_DEF),
                          description='Prometheus blackbox Exporter HTTP check')
     nrpe_setup.write()
-    hookenv.status_set('active', 'ready')
+    hookenv.status_set('active', 'Ready')
     set_state('blackbox-exporter.configured')
 
 
