@@ -16,3 +16,36 @@ you can update the charm's configuration using:
 To confirm configuration was set:
 
     juju config prometheus-blackbox-exporter
+
+## Testing
+
+# This directory needs to be create in the charm path prior to testing
+```
+mkdir -p report/lint
+```
+
+## Deployment
+
+# To avail of the metrics in grafana the following steps can be used
+```
+juju deploy grafana
+juju deploy prometheus2
+juju add-relation prometheus-blackbox-exporter:scrape prometheus2:target
+juju add-relation prometheus-blackbox-exporter:dashboards grafana:dashboards
+```
+
+# To setup reporting with nagios
+```
+juju deploy nrpe
+juju add-relation prometheus-blackbox-exporter:nrpe-external-master  nrpe:nrpe-external-master
+```
+
+# Change or update dashboards
+```
+# To provide your own dashboards, create a zip file and attach it as a resource 
+zip grafana-dashboards.zip blackbox-simple.json blackbox-advanced.json
+juju attach-resource prometheus-blackbox-exporter dashboards=./grafana-dashboards.zip
+```
+
+# Contact Information
+- Charm bugs: https://bugs.launchpad.net/charm-prometheus-blackbox-exporter

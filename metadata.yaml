@@ -14,3 +14,14 @@ subordinate: false
 provides:
   blackbox-exporter:
     interface: http
+  nrpe-external-master:
+    interface: nrpe-external-master
+    scope: container
+  dashboards:
+    interface: grafana-dashboard
+resources:
+  dashboards:
+    type: file
+    filename: grafana-dashboards.zip
+    description:
+      Zip file to provide grafana dashboards

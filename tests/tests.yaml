@@ -1,0 +1,11 @@
+charm_name: prometheus-blackbox-exporter
+gate_bundles:
+  - xenial
+  - bionic
+  #- focal # Uncomment when nrpe and prometheus2 become available for focal
+smoke_bundles:
+  - bionic
+dev_bundles:
+  - bionic
+tests:
+  - tests.test_prometheus_blackbox_exporter.CharmOperationTest

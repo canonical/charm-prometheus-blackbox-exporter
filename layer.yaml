@@ -1,5 +1,10 @@
-includes: ['layer:basic', 'interface:http', 'layer:snap']
-repo: 'https://git.launchpad.net/prometheus-blackbox-exporter-charm'
+includes: 
+  - layer:basic
+  - interface:http
+  - layer:snap
+  - interface:nrpe-external-master
+  - interface:grafana-dashboard
+repo: https://git.launchpad.net/prometheus-blackbox-exporter-charm
 ignore: ['.*.swp' ]
 options:
   basic:

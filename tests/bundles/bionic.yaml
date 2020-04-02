@@ -1,0 +1,16 @@
+series: bionic
+applications:
+  prometheus-blackbox-exporter:
+    options:
+      snap_channel: stable
+    num_units: 1
+  nrpe:
+    charm: cs:nrpe
+  prometheus:
+    charm: cs:prometheus2
+    num_units: 1
+relations:
+  - - prometheus-blackbox-exporter:nrpe-external-master
+    - nrpe:nrpe-external-master
+  - - prometheus-blackbox-exporter:blackbox-exporter
+    - prometheus:target
