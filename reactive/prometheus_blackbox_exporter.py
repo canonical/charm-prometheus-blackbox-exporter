@@ -62,7 +62,7 @@ def get_modules():
     try:
         modules = yaml.safe_load(config.get('modules'))
     except yaml.YAMLError as error:
-        hookenv.log('Failed to load modules, '.format(error))
+        hookenv.log('Failed to load modules, error {}'.format(error))
         return None
 
     if 'modules' in modules:
@@ -138,7 +138,6 @@ def nrpe_changed():
 @when('blackbox-exporter.changed')
 def prometheus_changed():
     """Trigger prometheus update."""
-    remove_state('blackbox-exporter.prometheus_relation_configured')
     remove_state('blackbox-exporter.configured')
 
 

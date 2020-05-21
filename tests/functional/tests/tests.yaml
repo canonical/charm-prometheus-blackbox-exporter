@@ -1,8 +1,8 @@
 charm_name: prometheus-blackbox-exporter
 gate_bundles:
-  - xenial
+  - focal
   - bionic
-  #- focal # Uncomment when nrpe and prometheus2 become available for focal
+  - xenial
 smoke_bundles:
   - bionic
 dev_bundles:

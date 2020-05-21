@@ -8,8 +8,7 @@ help:
 	@echo " make help - show this text"
 	@echo " make submodules - make sure that the submodules are up-to-date"
 	@echo " make lint - run flake8"
-	@echo " make test - run the unittests and lint"
-	@echo " make unittest - run the tests defined in the unittest subdirectory"
+	@echo " make test - run the functional tests and lint"
 	@echo " make functional - run the tests defined in the functional subdirectory"
 	@echo " make release - build the charm"
 	@echo " make clean - remove unneeded files"
@@ -24,11 +23,7 @@ lint:
 	@echo "Running flake8"
 	@tox -e lint
 
-#test: lint unittest functional
 test: lint functional
-
-unittest:
-	@tox -e unit
 
 functional: build
 	@echo Executing with: CHARM_BUILD_DIR=$(CHARM_BUILD_DIR) tox -e func
@@ -48,6 +43,6 @@ clean:
 	@if [ -d .tox ] ; then rm -r .tox ; fi
 	@if [ -d .pytest_cache ] ; then rm -r .pytest_cache ; fi
 	@find . -iname __pycache__ -exec rm -r {} +
-	
+
 # The targets below don't depend on a file
-.PHONY: lint test unittest functional build release clean help submodules
+.PHONY: lint test functional build release clean help submodules
