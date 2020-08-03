@@ -2,13 +2,14 @@
 """Installs and configures prometheus-blackbox-exporter."""
 
 import os
-from pathlib import Path
 import shutil
+from pathlib import Path
 from zipfile import BadZipFile, ZipFile
 
 from charmhelpers.contrib.charmsupport import nrpe
 from charmhelpers.core import hookenv, host
 from charmhelpers.core.templating import render
+
 from charms.layer import snap
 from charms.reactive import (
     endpoint_from_flag,
@@ -21,6 +22,7 @@ from charms.reactive import (
     when_not,
 )
 from charms.reactive.helpers import any_file_changed, data_changed
+
 import yaml
 
 
