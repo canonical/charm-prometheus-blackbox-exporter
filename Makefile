@@ -37,12 +37,12 @@ clean:
 	@rm -rf ${CHARM_BUILD_DIR}/${CHARM_NAME}
 
 submodules:
-	@echo "Cloning submodules"
-	@git submodule update --init --recursive
+	# @git submodule update --init --recursive
+	@echo "No submodules. Skipping."
 
 submodules-update:
-	@echo "Pulling latest updates for submodules"
-	@git submodule update --init --recursive --remote --merge
+	# @git submodule update --init --recursive --remote --merge
+	@echo "No submodules. Skipping."
 
 build:
 	@echo "Building charm to directory ${CHARM_BUILD_DIR}/${CHARM_NAME}"
@@ -66,8 +66,8 @@ proof:
 	@charm proof src
 
 unittests:
-	@echo "Running unit tests"
-	@cd src && tox -e unit
+	# @cd src && tox -e unit
+	@echo "No unit tests. Skipping."
 
 functional: build
 	@echo "Executing functional tests in ${CHARM_BUILD_DIR}"
