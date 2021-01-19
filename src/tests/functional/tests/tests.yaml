@@ -9,3 +9,7 @@ dev_bundles:
   - bionic
 tests:
   - tests.test_prometheus_blackbox_exporter.CharmOperationTest
+target_deploy_status:
+  nrpe:
+    workload-status: blocked
+    workload-status-message: Nagios server not configured or related
