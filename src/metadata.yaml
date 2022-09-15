@@ -6,10 +6,7 @@ description: |
        endpoints over HTTP, HTTPS, DNS, TCP and ICMP.
 tags:
   - monitoring
-series:
-  - xenial
-  - bionic
-  - focal
+series: []
 subordinate: false
 provides:
   blackbox-exporter:
