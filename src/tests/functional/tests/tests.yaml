@@ -1,12 +1,12 @@
 charm_name: prometheus-blackbox-exporter
 gate_bundles:
+  - jammy
   - focal
   - bionic
-  - xenial
 smoke_bundles:
-  - bionic
+  - jammy
 dev_bundles:
-  - bionic
+  - jammy
 tests:
   - tests.test_prometheus_blackbox_exporter.CharmOperationTest
 target_deploy_status:

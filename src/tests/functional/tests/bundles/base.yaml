@@ -1,13 +1,12 @@
-series: xenial
 applications:
   prometheus-blackbox-exporter:
     options:
       snap_channel: stable
     num_units: 1
   nrpe:
-    charm: cs:nrpe
+    charm: ch:nrpe
   prometheus:
-    charm: cs:prometheus2
+    charm: ch:prometheus2
     num_units: 1
 relations:
   - - prometheus-blackbox-exporter:nrpe-external-master
