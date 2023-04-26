@@ -4,6 +4,7 @@ parts:
     source: src
     plugin: reactive
     build-snaps: [charm]
+    build-packages: [python3-dev]
 bases:
     - build-on:
         - name: ubuntu
