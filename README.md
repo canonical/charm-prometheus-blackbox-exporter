@@ -48,4 +48,4 @@ juju attach-resource prometheus-blackbox-exporter dashboards=./grafana-dashboard
 ```
 
 # Contact Information
-- Charm bugs: https://bugs.launchpad.net/charm-prometheus-blackbox-exporter
+- Charm bugs: https://github.com/canonical/charm-prometheus-blackbox-exporter/issues
