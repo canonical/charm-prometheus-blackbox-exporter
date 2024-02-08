@@ -1,4 +1,5 @@
 """Encapsulate prometheus-blackbox-exporter testing."""
+
 import logging
 import time
 import unittest
