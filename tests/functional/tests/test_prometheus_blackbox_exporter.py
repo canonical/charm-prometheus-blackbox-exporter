@@ -44,9 +44,7 @@ class CharmOperationTest(BasePrometheusBlackboxExporterTest):
             response = model.run_on_unit(self.lead_unit_name, curl_command)
             if response["Code"] == "0":
                 return
-            logging.warning(
-                "Unexpected curl response: {}. Retrying in 30s.".format(response)
-            )
+            logging.warning("Unexpected curl response: {}. Retrying in 30s.".format(response))
             time.sleep(30)
 
         # we didn't get rc=0 in the allowed time, fail the test
@@ -59,14 +57,9 @@ class CharmOperationTest(BasePrometheusBlackboxExporterTest):
     def test_02_nrpe_http_check(self):
         """Verify nrpe check exists."""
         expected_nrpe_check = (
-            "command[check_prometheus_blackbox_exporter_http]={} -I 127.0.0.1 "
-            "-p {} -u {}"
-        ).format(
-            "/usr/lib/nagios/plugins/check_http", DEFAULT_API_PORT, DEFAULT_API_URL
-        )
-        logging.debug(
-            "Verify the nrpe check is created and has the required content..."
-        )
+            "command[check_prometheus_blackbox_exporter_http]={} -I 127.0.0.1 " "-p {} -u {}"
+        ).format("/usr/lib/nagios/plugins/check_http", DEFAULT_API_PORT, DEFAULT_API_URL)
+        logging.debug("Verify the nrpe check is created and has the required content...")
         cmd = "cat /etc/nagios/nrpe.d/check_prometheus_blackbox_exporter_http.cfg"
         result = model.run_on_unit(self.lead_unit_name, cmd)
         code = result.get("Code")
