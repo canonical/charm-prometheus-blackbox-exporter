@@ -57,7 +57,7 @@ class CharmOperationTest(BasePrometheusBlackboxExporterTest):
     def test_02_nrpe_http_check(self):
         """Verify nrpe check exists."""
         expected_nrpe_check = (
-            "command[check_prometheus_blackbox_exporter_http]={} -I 127.0.0.1 " "-p {} -u {}"
+            "command[check_prometheus_blackbox_exporter_http]={} -I 127.0.0.1 -p {} -u {}"
         ).format("/usr/lib/nagios/plugins/check_http", DEFAULT_API_PORT, DEFAULT_API_URL)
         logging.debug("Verify the nrpe check is created and has the required content...")
         cmd = "cat /etc/nagios/nrpe.d/check_prometheus_blackbox_exporter_http.cfg"
