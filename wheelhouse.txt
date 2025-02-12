@@ -1,0 +1,2 @@
+# https://github.com/pypa/setuptools/issues/4483
+setuptools==70.0.0
