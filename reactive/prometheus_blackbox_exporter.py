@@ -217,9 +217,7 @@ def update_dashboards_from_resource():
         hookenv.log("BadZipFile: {}".format(error), hookenv.ERROR)
         return
     except PermissionError as error:
-        hookenv.log(
-            "Unable to unzip the provided resource: {}".format(error), hookenv.ERROR
-        )
+        hookenv.log("Unable to unzip the provided resource: {}".format(error), hookenv.ERROR)
         return
 
     register_grafana_dashboards()
