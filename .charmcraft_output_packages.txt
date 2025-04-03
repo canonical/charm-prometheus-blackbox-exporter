@@ -1,1 +1,0 @@
-prometheus-blackbox-exporter_ubuntu@20.04-amd64.charm
