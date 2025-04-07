@@ -6,7 +6,6 @@ import unittest
 
 import zaza.model as model
 
-
 CURL_TIMEOUT = 180
 REQ_TIMEOUT = 12
 DEFAULT_API_PORT = "9115"
