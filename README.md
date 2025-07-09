@@ -1,3 +1,6 @@
+> [!NOTE]
+> This charm is under maintenance mode. Only critical bug will be handled.
+
 # Juju prometheus Blackbox exporter charm
 
 This charm provides the [Prometheus Blackbox exporter](https://github.com/prometheus/blackbox_exporter), part of the [Prometheus](https://prometheus.io/) monitoring system
